@@ -143,7 +143,7 @@
           document.querySelector("#update-total").textContent = numberFormat.format(totals.updates);
           document.querySelector("#zip-total").textContent = numberFormat.format(totals.zip);
           tbody.innerHTML = rows.length
-            ? rows.map(row => `<tr><td><a href="https://github.com/pcjustin/CamelPlayer/releases/tags/v${encodeURIComponent(row.version)}" target="_blank" rel="noopener noreferrer">v${row.version}</a></td><td>${numberFormat.format(row.zipDownloads)}</td><td>${numberFormat.format(row.automaticUpdates)}</td><td>${numberFormat.format(row.newDownloads)}</td></tr>`).join("")
+            ? rows.map(row => `<tr><td><a href="https://github.com/pcjustin/CamelPlayer/releases/tag/v${encodeURIComponent(row.version)}" target="_blank" rel="noopener noreferrer">v${row.version}</a></td><td>${numberFormat.format(row.zipDownloads)}</td><td>${numberFormat.format(row.automaticUpdates)}</td><td>${numberFormat.format(row.newDownloads)}</td></tr>`).join("")
             : '<tr><td class="empty" colspan="4">目前沒有符合檔名格式的檔案。</td></tr>';
           status.textContent = `最後更新：${new Intl.DateTimeFormat("zh-TW", { dateStyle: "medium", timeStyle: "short" }).format(new Date())} · 資料來自 GitHub Releases`;
         } catch (error) {
